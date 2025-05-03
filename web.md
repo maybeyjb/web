@@ -1,4 +1,4 @@
-<img width="420" alt="image" src="https://github.com/user-attachments/assets/327e2783-b538-4af8-8040-c047998be8bd" />
+
 
 # 41：文件解析
 
