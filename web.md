@@ -6,7 +6,7 @@
 
 冷门语言，目前较少，主流是php java。
 
-<img width="420" alt="image" src="https://github.com/user-attachments/assets/8063c925-fb63-4e98-8ba6-f7ceae56c5d4" />
+	<img width="420" alt="image" src="https://github.com/user-attachments/assets/8063c925-fb63-4e98-8ba6-f7ceae56c5d4" />
 
 
  asp数据库是在网站路径下，是已经配置好了。目录下的mdb文件就是你的数据库，里面就是你的存储数据
