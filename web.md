@@ -130,14 +130,14 @@ https://cloud.tencent.com/developer/article/2050105
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/8e62b3d8-13b3-4271-96e8-d57b0a21279d" />
 
-<img width="420" alt="image" src="https://github.com/user-attachments/assets/4e4bc0aa-f909-4e01-a926-2d0ccccb1568" />
+
 
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/a5ebf612-1b62-41f7-ac4a-c526fe476d88" />
 
 
 
-<img width="420" alt="image" src="https://github.com/user-attachments/assets/8d29e772-697e-43fc-b99e-5ebfabf881af" />
+
 
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/eafdd2d8-0c85-4906-9e66-1dfd805dc570" />
