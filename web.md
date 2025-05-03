@@ -1,4 +1,4 @@
-
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/327e2783-b538-4af8-8040-c047998be8bd" />
 
 # 41：文件解析
 
@@ -6,77 +6,89 @@
 
 冷门语言，目前较少，主流是php java。
 
-![image-20250311220054749](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250311220054749.png)
-
-12min asp数据库是在网站路径下，是已经配置好了。目录下的mdb文件就是你的数据库，里面就是你的存储数据
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/8063c925-fb63-4e98-8ba6-f7ceae56c5d4" />
 
 
+ asp数据库是在网站路径下，是已经配置好了。目录下的mdb文件就是你的数据库，里面就是你的存储数据
 
-![image-20250312133859662](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312133859662.png)
 
-20min  打开网页演示。如果没有更改路径，就可以直接访问数据库文件下载。就是因为asp这种语言特性造成的，或者你可以将默认路径更改。
 
-29 min 
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/8238b1a2-5461-4f0c-9c7d-ba520f4d3843" />
+
+打开网页演示。如果没有更改路径，就可以直接访问数据库文件下载。就是因为asp这种语言特性造成的，或者你可以将默认路径更改。
 
 HTTP.SYS（CVE-2015-1635）   远程代码执行，就是让对方蓝屏，然后重启。
 
-![image-20250311221526218](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250311221526218.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/c313f021-d212-4ccb-92b6-7f4276bd6c82" />
+
 
 直接用msf打，有这款漏洞专门的漏洞模块。
 
 就是这种web页面，
 
-![image-20250312134038112](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312134038112.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/19e9a690-44fd-4c10-a221-8dbf58b062be" />
 
-![image-20250312134143365](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312134143365.png)
 
-37min  重新演示一遍
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/0435282e-fc3e-4a69-bd69-81f604603fb0" />
 
-![image-20250312134356185](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312134356185.png)
+
+  重新演示一遍
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/a7324d87-5660-4468-90dd-b8fec02a30f4" />
+
 
 ### IIS短文件：
 
-39min   基本是iis搭建的都可以尝试。
+  基本是iis搭建的都可以尝试。
 
-![image-20250311222441451](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250311222441451.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/39afb124-f422-446e-a14c-cf67f6a7d7e8" />
 
-![image-20250312135103610](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312135103610.png)
 
-42min 演示、用工具进行测试：
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/5dba698e-1add-4fb4-96e2-71b432254db5" />
+
+
+演示、用工具进行测试：
 
 可以扫到网站目录下文件的前几位名字，比如说网站目录下有asdfghh文件夹，可以利用iis漏洞扫到存在asdfg....文件，一般都是前6位。
 
-![image-20250312135051611](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312135051611.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/75386bf3-49b0-4f6d-b558-77306422a9bf" />
+
 
 ### IIS 文件解析
 
 一般都是IIS  6/7版本，常见6版本，7版本都是打补丁了，6 没有打。         一般都是配合文件上传
 
-![image-20250311223211875](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250311223211875.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/58de154d-1b55-4baf-b70d-98f5fa558afc" />
 
-53min   就是比如你上传是1.asp的后门，但是你可以将后门改为1.asp;.jpg这种文件，他还是可以解析你的1.asp后门，就是将你的1.asp;.jpg当成1.asp解析了，但是你在网站目录下看是1.asp;.jpg图片文件。
 
-![image-20250312140248384](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312140248384.png)
+  就是比如你上传是1.asp的后门，但是你可以将后门改为1.asp;.jpg这种文件，他还是可以解析你的1.asp后门，就是将你的1.asp;.jpg当成1.asp解析了，但是你在网站目录下看是1.asp;.jpg图片文件。
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/dd602bdf-985f-4ee1-b432-c61496269464" />
+
 
 还有一种是，文件夹。还是比如你上传1.asp的后门，但是放到了1.asp文件夹里，然后你的1.asp的后门改为1.jpg，这时候还是可以解析你的1.jsp为1.asp。也就是说将1.asp文件夹里面的文件都当成asp文件解析。
 
-![image-20250312140253010](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312140253010.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/5693096f-c057-47da-b802-69b78f11a72e" />
+
 
 
 
 ### IIS写权限
 
-![image-20250311224257731](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250311224257731.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/9ed23299-51df-4d37-b339-b503d70d1f24" />
 
-1h  IIS搭建的时候配置错误，导致可以写入文件。
+
+IIS搭建的时候配置错误，导致可以写入文件。
 
 https://cloud.tencent.com/developer/article/2050105
 
 条件：
 
-![image-20250312140614665](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312140614665.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/c55891cd-7c0b-462a-bd0e-9cab6e2fc89a" />
 
-![image-20250312140728058](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312140728058.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/07a5e0ee-e2f7-44ee-aaf9-8b06fb3053f2" />
+
 
 
 
@@ -84,19 +96,21 @@ https://cloud.tencent.com/developer/article/2050105
 
 数据库注入，access数据库注入，
 
-![image-20250311224822166](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250311224822166.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/aaab2b1e-349c-4b53-9f03-0c8cc0991ddf" />
 
-1h06min   sql注入
+
+  sql注入
 
 有时候你注入后，会返回404，这种有时候是代码逻辑的容错处理。就类似代码里的  try  exectp
 
-![image-20250312141647221](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312141647221.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/c820c969-a51a-4195-9b26-3672853ff38d" />
 
-1h22min  sqlmap直接跑。
 
-1h33min  iis短文件。
+ sqlmap直接跑。
 
-![image-20250312143118088](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312143118088.png)
+ iis短文件。
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/a5c06ccf-630b-42a6-8a71-c3b44cab24e2" />
 
 
 
@@ -104,47 +118,57 @@ https://cloud.tencent.com/developer/article/2050105
 
 
 
-![image-20250220222643292](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250220222643292.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/bb79cd70-55b0-4abb-bfc2-9bc26b37abea" />
 
-![image-20250221213859480](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221213859480.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/ec1433d7-a4e2-494e-a195-e05cb05d87bd" />
+
 
 怎么判断是6位，order by 就行
 
 这里判断的是2，4，5是注入点：
 
-![image-20250221214917104](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221214917104.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/8e62b3d8-13b3-4271-96e8-d57b0a21279d" />
 
-![image-20250221215043145](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221215043145.png)
-
-![image-20250221215548633](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221215548633.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/4e4bc0aa-f909-4e01-a926-2d0ccccb1568" />
 
 
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/a5ebf612-1b62-41f7-ac4a-c526fe476d88" />
 
-![image-20250221211541336](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221211541336.png)
 
-![image-20250221213433498](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221213433498.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/8d29e772-697e-43fc-b99e-5ebfabf881af" />
+
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/eafdd2d8-0c85-4906-9e66-1dfd805dc570" />
+
 
 ### 跨库查询
 
-![image-20250221220041287](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221220041287.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/c233aca0-7982-4813-9a3a-43b9622a16fe" />
+
 
 
 
 ### 文件读
 
-![image-20250220225859814](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250220225859814.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/cd45efba-9559-4860-aefb-fc630d1d5a35" />
 
 
 
-![image-20250221222019801](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221222019801.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/62158d24-fed9-4a69-84ff-3dfc334d383b" />
+
 
 条件：1、当前数据库用户权限 	2、secure-file-priv设置 这里是对应的sql服务（MySQL5.7.26）的配置文件(my.ini)
 
-![image-20250221222156924](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221222156924.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/35f8657e-800c-455f-94ad-2ab3baaf4ab3" />
+
 
 文件写：into outfile 条件和那个读一样：
 
-![image-20250221223235480](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221223235480.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/fb7684ad-891b-409a-a6ba-9da176999596" />
+
 
 
 
@@ -153,10 +177,10 @@ https://cloud.tencent.com/developer/article/2050105
 1、有时候一些报错信息会有路径
 
 2、读一些中间件的默认存储路径，获取web服务的路径，在写入shell到指定路径下。
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/7661c1be-ffbd-46b8-8067-1f96ceb75690" />
 
-![image-20250221224017903](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221224017903.png)
 
-![image-20250221224644344](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221224644344.png)
+<img width="214" alt="image" src="https://github.com/user-attachments/assets/cc63a29d-b0d8-4c57-923c-4bf6d0b992c0" />
 
 ### 单引号过滤
 
@@ -164,7 +188,7 @@ https://cloud.tencent.com/developer/article/2050105
 
 SQL注入语句中用单引号就不要编码，编码就不用单引号（路径，表名，数据库名等）
 
-![image-20250221225506726](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250221225506726.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/2cf65c3f-bc8c-4ae8-959d-b0d8972b8cea" />
 
 
 
@@ -176,9 +200,11 @@ SQL注入语句中用单引号就不要编码，编码就不用单引号（路�
 
 
 
-![image-20250222210208298](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222210208298.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/e1b3da40-0511-4677-b408-bd6d924ae746" />
 
-![image-20250222213606401](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222213606401.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/ae371ef4-35f6-477e-817a-f01d63a12c4c" />
+
 
 
 
@@ -192,34 +218,40 @@ GET POST SERVER FILES HTTP头等。
 
 这种是get的，post穿不了：
 
-![image-20250222214235415](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222214235415.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/fa0a54df-0af9-42ed-a740-98322d090802" />
+
 
 post：
 
-![image-20250222214851722](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222214851722.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/3dc39851-358b-423a-931b-9c9a3fc24fdb" />
+
 
 r就是对get post cookie都可以传
 
-![image-20250222215212683](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222215212683.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/1d411499-a6dd-428b-a0f6-5b8252ee42a5" />
+
 
 cookie传参
 
-![image-20250222215449075](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222215449075.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/bf4790b3-0aff-48ca-84e4-597b442ea06b" />
 
 这里注入后发现长度变化，存在注入。
 
-![image-20250222223045654](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222223045654.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/14fc59d2-3e8e-4374-bc64-e7416faa30d7" />
+
 
 #### $_SERVER：
 
-![image-20250222224804627](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222224804627.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/d538bb02-14bc-4953-82c7-440ff1c8cf7c" />
+
 
 ```
 $_SERVER['HTTP_X_FORWARDED_FOR'];
 这儿的也可以改为sql注入语句。
 ```
 
-![image-20250222225701236](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222225701236.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/3eb74c45-638c-4abd-bdbe-cb7c489481e3" />
+
 
 ```
 $_SERVER['HTTP_REFERER']; //访问来源 Referer
@@ -227,11 +259,12 @@ $_SERVER['HTTP_REFERER']; //访问来源 Referer
 
 
 
-![image-20250222230309585](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222230309585.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/93682ec9-b17b-4633-8695-1e875818026f" />
+
 
 抓包也发现这里的refer是baidu，是用baidu来跳转到method.php的
 
-![image-20250222230422440](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250222230422440.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/322a0e96-704c-4b42-9a67-5359e5b08562" />
 
 #### 演示：
 
@@ -239,15 +272,16 @@ $_SERVER['HTTP_REFERER']; //访问来源 Referer
 
 X-FORWARDED-FOR：
 
-![image-20250223142544594](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250223142544594.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/fd4b7591-9d71-4649-b43e-bf37c17d1bf0" />
 
-![image-20250223142752286](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250223142752286.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/ebf43b97-010d-45ab-bd96-83f14c20cae2" />
+
 
 2、
 
 IP配置到代码中 那就不是产生注入了，但这种可以绕过，就是让ip为127.0.0.1：
 
-![image-20250223143032490](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250223143032490.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/7f2971bc-0f35-4cbb-9215-7b32e6f98dc3" />
 
   
 
@@ -260,14 +294,16 @@ IP配置到代码中 那就不是产生注入了，但这种可以绕过，就�
 MYSQL-数据请求格式
 
 base64的，那么对应的注入语句也应该是base64注入：
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/732ee775-b3ca-4027-a5ac-62b4294d7410" />
 
-![image-20250223144213151](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250223144213151.png)
 
 json：
 
-![image-20250223144435249](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250223144435249.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/d72b04f8-de11-4da9-bd7b-2c1daf812b9b" />
 
-![image-20250223144612138](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250223144612138.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/fd707959-bcc4-48c5-a46f-1cef4f7928d0" />
+
 
 # 44：sql
 
@@ -277,111 +313,128 @@ json：
 
 查是对数据进行操作,	增删改是对结果，就是看最后的结果，对数据内容不关心，关心的是增加成功没有。所以引出盲注。
 
-![image-20250224150113472](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224150113472.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/e811bd19-9bc6-4cf5-9cdc-2c1484c0e8de" />
+
 
 ### 盲注：
 
 正常注入：
 
-![image-20250224151157912](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224151157912.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/48ab9cd5-51cf-4ce9-9062-8415da95992a" />
+
 
 没有回显的话：
 
-![image-20250224151234669](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224151234669.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/24214442-1722-4faa-bcba-6fb9acd5232b" />
 
 所以就需要采用盲注
 
 #### 布尔
 
-11min 	
+	
 
 布尔盲注：逻辑判断、就是猜数据库的名，条件：需要有回显
 
 常用函数：regexp,like,ascii,left,ord,mid
 
-![image-20250224152207317](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224152207317.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/03855a46-76e6-4e8f-adee-a36ec2bf754e" />
+
 
 判断正确就正常回显，判断错误就无回显、判断数据库名前两位是不是dd	（demo01）：
 
-![image-20250224152143650](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224152143650.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/b0c2694a-a9f1-4703-b41d-09c323120c47" />
+
+
 
 
 
 ####  延时
 
-18min 延时注入 延时判断  不需要回显	 
+ 延时注入 延时判断  不需要回显	 
 
 条件：没有
 
  if   ,   sleep
 
-![image-20250224152800658](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224152800658.png)
+<img width="336" alt="image" src="https://github.com/user-attachments/assets/9b0b6042-5426-4bba-83fc-435b0063a55f" />
+
 
 延时注入：
 
-![image-20250224153139630](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224153139630.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/4e30f648-582d-4203-ac0c-319008a96a4c" />
+
 
 
 
 ####  报错
 
-26min  报错注入：报错回显   
+ 报错注入：报错回显   
 
 条件：需要对面做了报错处理
 
-​	![image-20250224154111711](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224154111711.png)
+​<img width="420" alt="image" src="https://github.com/user-attachments/assets/72d5e1d9-d247-4a24-9002-fd61dadb908a" />
+
 
 floor，updatexml，extractvalue	报错注入函数很多
 
-![image-20250224154315682](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224154315682.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/8cc44e8a-29d5-42d8-8dd8-661cb433c6fc" />
+
 
 文件上传怎么导致的xss注入，就是将文件名改成注入语句。
 
 利用insert插入语句。
 
-43min 测试
+测试
 
-![image-20250224155957483](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224155957483.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/17e7d752-db9f-495d-b893-d94f29cb89a7" />
+
 
 源码分析这里是有报错处理函数的：
 
-![image-20250224155619870](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224155619870.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/8e7cdb35-2044-4b8e-9b43-64540264702e" />
+
 
 报错注入、注意：这里id是没有1的，所以如果是1 and  就不会执行and后面的sql语句，所以这里是1 or
 
-![image-20250224155819825](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224155819825.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/0413b276-1105-4e12-8c04-bdfbdc004881" />
+
 
 ### cms：
 
-53min 搭建cms演示。-----59min  
+搭建cms演示。 
 
-![image-20250224164119208](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224164119208.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/701c7711-23e0-4df8-8de6-347a16622e80" />
 
 发现调用处在r=contact的发表言论这里，插入报错语句：
 
-![image-20250224164143834](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224164143834.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/f9c44181-c0b7-4f0b-9769-a74d2a9e47e9" />
 
 
 
-1h10min  kkcms
+
+ kkcms
 
 delete注入：数据包里有时候空格要换成%20，   而且对单引号过滤了，需要绕过：ascis 码绕过  这里看看16进制能不能绕过。
 
 判断注入，找到调用的路径为admin/cms_usergroup.php?
 
-![image-20250224170542822](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224170542822.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/941d91f7-5d90-4654-b901-0ce79f676578" />
+
 
 进行注入，参数为get['del']：这里需要进行url编码，因为是在url框中的。
 
-![image-20250224170657808](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224170657808.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/342676f3-c948-4528-9617-d948789345a9" />
+
 
 而且对单引号过滤 了，ascii绕过。ord就是转换用的。
 
-![image-20250224171135954](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224171135954.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/c88d2c9b-ddb8-4997-b875-03b23e57a905" />
+
 
 16进制也可以。
 
-![image-20250224171258704](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250224171258704.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/e84d4fec-86c7-4821-97a2-2abe961045a1" />
+
 
 # 45：sql
 
