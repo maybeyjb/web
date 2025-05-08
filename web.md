@@ -440,9 +440,13 @@ delete注入：数据包里有时候空格要换成%20，   而且对单引号�
 
 ### 二次注入
 
+
 条件；注入条件：插入时有转义函数或配置，后续有利用插入的数据
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/07643841-3450-4f5d-b157-a4c0877e5a35" />
+
+
 
 
 就是先插进去sql语句，二次数据库调用的时候引发sql注入。
@@ -454,6 +458,7 @@ delete注入：数据包里有时候空格要换成%20，   而且对单引号�
 
 
 然后登录注册的用户后点击更改密码，发现执行注入语句：
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/511b1650-ff4a-4843-b006-88723156f140" />
 
 
@@ -475,7 +480,9 @@ delete注入：数据包里有时候空格要换成%20，   而且对单引号�
 
 不然你的注入语句不是字符串，或者就报错执行不了。这种函数其实是防止sql注入的，但是二次注入却利用到它。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/f1591958-27e2-49a4-9aba-ce7e51a5df1f" />
+
 
 cms演示  前端限制长度，更改
 
@@ -483,9 +490,11 @@ cms演示  前端限制长度，更改
 
 
 
+
 这里先插入：
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/e719ed6a-9798-4cf7-a3f3-138f58c809cc" />
+
 
 在查看个人简历的时候就执行了sql语句，那么就成功进行二次注入。
 
@@ -860,16 +869,20 @@ js里的语句是你要攻击的语句，一般写alert是方便演示，还可�
 
 #### 存储型
 
-这里实战技术就将这个语句写成盗用cookie的一些恶意语句。这里演示就只写一个弹窗。
+这里实战技术就将这个语句写成盗用cookie的一些恶意语句。这里演示就只写一个弹窗
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/4845a184-f6d7-4e83-a430-ee68081a834c" />
 
 
-dom型      
+dom型
+
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/40611f9d-f0e4-4581-b85d-9426fd8c2339" />
 
 
 案例2：
+	
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/227c7baf-542a-4bdb-9564-9c93f845727a" />
 
@@ -891,6 +904,7 @@ dom型
 #### svg：
 
 打开是一张图片，存在跨站。
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/b3f77503-f004-46ff-bbae-7bac0e3cba6e" />
 
@@ -920,17 +934,23 @@ www.com 攻击者	    你是受害者
 
 1：就是受害者发送的数据包请求		3：就是相当于攻击者构造恶意相同的数据包
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/b64acd59-9b38-4afa-abff-f965b5849fd4" />
 
 将最后生成的html复制为1.html文件，然后访问1.html：
 
 注意：这里bp是将刚才抓到的包drop，而不是放回/。将1.html上传到服务器。在用刚才抓包的浏览器访问此地址，因为有用户登录凭证，这就相当于模拟的是诱导受害者点击你构造的数据包。
 
+
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/7a1d0921-5494-4c36-b128-992d48096444" />
 
-点击后回到我们的添加管理员页面发现成功添加刚才的账户。
+
+点击后回到我们的添加管理员页面发现成功添加刚才的账户
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/df5b872e-97bf-48a9-9ff9-64a947fb2e04" />
+
 
 
 这个过程就是csrf。
@@ -941,12 +961,14 @@ www.com 攻击者	    你是受害者
 
 检测referer是外部访问就会拦截：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/a72fd74b-bfc0-4fa2-93ab-7fd62ae7c585" />
 
 
  当策略不是十分严谨的话、这种重复发，就是猜测他的策略只是要referer中存在host就行：
 
 但是在实战中，注意这时候触发是让受害者点击的，那受害者总不可能自己抓包该referer，所以可以创建类似这种referer的文件名，让他访问。（当然实战中比较鸡肋）
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/c0331cea-364b-4005-8058-1779417cbf06" />
 
@@ -956,6 +978,7 @@ www.com 攻击者	    你是受害者
 不太严谨的话。添加一段去掉referer 、配合他的代码逻辑就可能会绕过。置空来源
 
 <meta name="referrer" content="no-referrer">
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/f5b84cf6-b5d8-4246-b038-8cb0ee618d01" />
 
@@ -974,6 +997,7 @@ token 验证身份用的。好比给每一个数据包一个随机编号的。�
 
 是存在token验证的。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/902c82a3-862d-4d33-8414-8b62beb26a92" />
 
 
@@ -985,9 +1009,12 @@ token 验证身份用的。好比给每一个数据包一个随机编号的。�
 
 让服务器自己访问自己，如果这个地址改为内网地址，那么服务器就会请求它自己的内网机器 ：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/d423ddf4-f93d-48ba-822f-c57c096d04dc" />
 
+
  检测端口，相当于内网探针。
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/608629b0-372a-4e76-85ba-b8a1031fd433" />
 
@@ -996,16 +1023,21 @@ token 验证身份用的。好比给每一个数据包一个随机编号的。�
 
  伪协议绕过1、127.0.01进制转换 	
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/ed2496b8-2854-468a-a54c-fc365b695828" />
 
 
 ### ctf
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/cba0edca-5d64-4a31-8ed8-d230fd3869e3" />
 
 限制127.0.0.1，本地地址。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/439a31c6-d840-4efc-b07e-e4785e4fd2de" />
+
+
 
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/dc59042e-c586-410a-be0d-17c936b4b888" />
@@ -1014,19 +1046,26 @@ token 验证身份用的。好比给每一个数据包一个随机编号的。�
 
 短地址：使用在线生成一个域名地址指向127.0.0.1、然后你访问内网这个地址就是访问127.0.0.1
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/b7dde1e9-63d4-4ed5-b583-160b583cd94d" />
+
 
 
 申请一个域名指向127.0.0.1、对方访问你的域名时候，就指向了127.0.0.1、就等于访问自身。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/63a2a7bf-9e58-467e-a31c-655906c59e32" />
+
 
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/a0fb0e5f-58f6-4248-bce2-630b2147b61b" />
 
+
 [127.0.0.1](http://ctf@127.0.0.1/)   和  ctf@[127.0.0.1](http://ctf@127.0.0.1/)  访问的地址是一样的：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/b3547682-5ab6-42b5-9520-169d947b5ee2" />
+
 
  重定向 
 
@@ -1034,17 +1073,22 @@ token 验证身份用的。好比给每一个数据包一个随机编号的。�
 
  gopher 协议  可以攻击类似数据库这种不走http协议的。攻击redis mysql服务这些、上面有漏洞。http是访问不了的，这就需要gopher 协议。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/82ab6d35-72de-4b4d-bdd6-bdfa32589beb" />
 
 
+
 Gopherus-master工具，将你需要执行的语句换成gopher协议的语句（有点像内网中将一个协议数据包换成另一种协议的数据包）：       执行写后门文件进去
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/92f37313-09fb-4d52-868e-4edf0a9a9387" />
 
 
 msyql   这里需要在url编译一次，因为你给过去它会url解码一次。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/bbc8ddf7-a793-4e5d-8b3c-fa93793fd008" />
+
 
   打redies：	未演示，下来自己复现。
 
@@ -1086,6 +1130,7 @@ java里面的sql注入代审，语句拼接。危险写法和安全写法。原�
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/a632ad78-8dae-49bf-abd4-410c98eea5a2" />
 
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/6dba7d03-407f-4021-b2a0-5e4a10df8994" />
 
 
@@ -1102,10 +1147,13 @@ java里面的sql注入代审，语句拼接。危险写法和安全写法。原�
 
 java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后看是$# 这些字符，预编译字符，进行排查有没有一些拼接之类的。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/4fbfbaab-ece3-4227-8285-0401142f5d11" />
 
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/32bb61db-6ed4-41dd-88ff-577f32c7f7e6" />
+
 
 
 ----翻车---
@@ -1120,10 +1168,13 @@ java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后�
 
 先打开源码发现有引用mybatis，然后猜测有没有引用sql的不安全写法。2、发现存在，这里一般不关注jsp，这类静态文件	3、定位到变量	4、看引用的id为什么，继续向上查找引用id的路由。
 
+
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/8e00164d-3ca6-4f92-b94a-30371b9ed65d" />
 
 
 1、查找引用id的	2、关注一些controller文件	3、定位	4、在delete模块	5、admin路径（路由）下
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/d05d8dbd-b6cd-40d5-bc93-2d56232af207" />
 
@@ -1132,15 +1183,18 @@ java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后�
 
 找到了对应路由，这里不能直接访问，是找出来的，根据上面的delete提醒找到：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/a4f31a88-da30-4dcc-acb5-15f84a350b06" />
 
 
 将抓到的数据包测试，在将发送的articelid参数注入点加上，直接就sqlmap跑、：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/3747edb6-0b53-4c36-8659-a0d590b0d8e0" />
 
 
 这里注意：复制数据包时候是选原始在复制：
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/d030466d-98c7-42b6-9edf-cd3a6d5825d1" />
 
@@ -1149,6 +1203,7 @@ java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后�
 
 	
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/06bacb34-43cf-427e-9478-19ee356a5bec" />
+
 
 
 
@@ -1166,6 +1221,7 @@ java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后�
 
 SSTI模版         spring boot 框架的。不同框架。	ognl jstl  是一些过时框架的。	ssti的几个可能有漏洞的模板
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/1fbe3003-6d54-400d-8bcb-20f299d1d21e" />
 
 
@@ -1173,7 +1229,9 @@ SSTI模版         spring boot 框架的。不同框架。	ognl jstl  是一些�
 
 参数就是让你渲染别的页面，这页面就是模板，参数可以替换成自己的命令,实现rce。lang参数直接改之类的。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/77ac0b7e-a143-424c-ab33-3efa8c5c35c1" />
+
 
 
 
@@ -1185,7 +1243,10 @@ SSTI模版         spring boot 框架的。不同框架。	ognl jstl  是一些�
 
 	SPEL表达式	ognl表达式注入(老了)	spel就好比php中的eval	java特有的
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/876cb512-cd01-4de5-914f-606555255578" />
+
+
 
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/4090fc04-1ca3-4a7a-a6b0-5194b5a3bacc" />
@@ -1194,6 +1255,8 @@ SSTI模版         spring boot 框架的。不同框架。	ognl jstl  是一些�
 绕过黑名单：
 
 利用反射机制的方法。--- forname   getclass	这些方法。
+
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/e4340362-6726-4e95-868d-6cf25c39d4c3" />
 
@@ -1210,6 +1273,7 @@ SSTI模版         spring boot 框架的。不同框架。	ognl jstl  是一些�
 
 测试通过函数或者参数，url中是否存在这些函数类：
 
+
 <img width="349" alt="image" src="https://github.com/user-attachments/assets/fa5da90d-76ea-4479-853d-79aad418526c" />
 
 
@@ -1218,14 +1282,20 @@ RuntimeExec
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/d5288202-2b6f-4d1a-8750-2013f70e70a0" />
 
 
+
  	ScriptEngineManager  jdk1.8之前的、用处不大，jdk太老了/
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/85b72a46-720d-43f1-aa6b-4dbccf57a112" />
 
 Groovy
 
 
-							 ProcessBuilder
+ProcessBuilder
+
+
+
+						
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/a7b23936-210f-417b-81f4-64bee7a2bc69" />
 
@@ -1233,6 +1303,7 @@ Groovy
  ProcessImpl
 
 黑盒中就是看参数，url，功能点测试rce。
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/cd572611-4d8b-4518-9495-5c97fae21169" />
 
@@ -1245,6 +1316,7 @@ java去远程调用rmi和loap协议调用出的rce
 
 主要用jndi的jar包注入工具，利用工具远程生成一个恶意代码的.class文件，然后调用远程地址加载恶意语句注入。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/46495c64-64c8-414f-b704-efd94da7587e" />
 
 
@@ -1253,6 +1325,7 @@ java去远程调用rmi和loap协议调用出的rce
 jndi是一个内置功能，是java的技术，里面的RMI：远程方法调用注册表	LDAP：轻量级目录访问协议  两个协议常用，不是作为漏洞打的，是作为java漏洞利用方法，利用这个jndi方法来实现漏洞。
 
 就比如说log4j有漏洞，就用jndi注入测试他的rce。
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/bb1b397e-7503-44c9-9256-1c94f45a288f" />
 
@@ -1271,12 +1344,14 @@ rmi和ldap的差异：
 
 logger.error    logger.info
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/ecd7bb58-09e1-4c44-b7fa-a153c6f31e6e" />
 
 
 漏洞库	 https://avd.aliyun.com/search?q=Log4j
 
 FastJson	json解析器，它可以解析JSON格式的字符串，支持将JavaBean序列化为JSON字符串，也可以从JSON字符串反序列化到JavaBean。
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/969095d1-865d-4eaa-b5fe-fead5b7872ff" />					 
 							
@@ -1286,12 +1361,14 @@ shiro 数据包中的cookie中有remerberme   shiro  能够用于身份验证、
 
 XStream 反序列化：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/9b967119-886a-4543-8baf-74fed9e4f7a5" />
 
 
 Log4j 记录日志的、一般会解析日志：
 
 那黑盒一般测试：一般用dnslog带外测试是否存在可能注入点：
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/17d318b6-0cfd-4ae4-8648-f7949b14227c" />
 
@@ -1300,15 +1377,18 @@ Log4j 记录日志的、一般会解析日志：
 
 项目：一个仿天猫的平台，进行审计找到fastjson漏洞
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/03ff8682-4702-447b-af1e-cc9b9478c2e2" />
 
 
 然后再tmall里面找是否引用过fastjson的库和函数，直接全局搜索
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/d070da22-e15f-4e0f-af43-88cfd1cd52de" />
 
 
 发现引用了fastjson的包，对应版本也有漏洞，然后还引用了对应的函数，那么就可以确定有洞：
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/24df5e00-2903-45a5-938f-c469280ad8aa" />
 
@@ -1343,7 +1423,16 @@ app商家不合规，就是你手机打开会请求权限，什么允许请求�
 
 一些测试的工具mobsf(不是专门的测隐私合规的，可以测app)、appshark（静态分析）、appscan（动态分析）------ 所以这个比较好。https://appscan.ly.com/   
 
+
+
+
+
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/9ed1f5d3-2417-4938-adc2-e10571ccf393" />
+
+
+
+
 
 
 不过用这个工具不能在模拟机中，只能在真机中，而且需要开root。
@@ -1359,44 +1448,62 @@ app商家不合规，就是你手机打开会请求权限，什么允许请求�
 
 权限弹窗。
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/e24b5649-ae1b-49ae-9a33-df570c308a8b" />
+
 
 2、就是这种app(计算器)是没有必要获取位置
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/dcb9106b-4e36-41cd-b780-0606de0f5245" />
 
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/5f05a334-f607-4091-ab73-f6eeda542ee9" />
 
 
+
 等这种字眼
+
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/53d85616-faaa-44a1-9368-459dbb67b35c" />
 
 
 例子：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/55782ed7-601b-4eed-b49f-8a17355b7fcf" />
+
+
 
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/5a179144-ad20-4630-803d-f832f9210cf4" />
 
 
+
+	
 hook：就是你动态调试app时候，然后看着其调用的类
+
+
+
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/6ff1dcc0-976e-443f-b2e5-f47be1edf53a" />
 
 
 或者要你的权限过了、就是此时是你第一次使用它，那么当时的场景你申请查询信用评估是不符合隐私合规：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/c42fc705-a979-4a66-ab59-7ab66b7e73a5" />
 
 
 利用用户不看条款：
 
+
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/b063115a-a1dc-4868-99fe-0333170b04a1" />
 
 
 位置权限：
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/649bc346-82a6-4f50-bac0-acb47a1dec0d" />
 
@@ -1405,13 +1512,16 @@ hook：就是你动态调试app时候，然后看着其调用的类
 
 
 ### url重定向：
+													
 
 比如 https://weixin.qq.com?url=www.xiaodi8.com这种，www.xiaodi8.com的页面和weixin页面一样，实现钓鱼。
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/d73b6e34-af9f-4a1e-946c-3712e04e0b33" />
 
 
 黑盒思路：
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/243e4ba2-39fd-4d21-9641-8285a976f565" />
 
@@ -1423,6 +1533,7 @@ hook：就是你动态调试app时候，然后看着其调用的类
   隐私合规的结果
 
  资源拒绝服务
+
 
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/309555a3-0a47-4621-b050-7f24e0970218" />
 
