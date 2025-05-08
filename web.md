@@ -1097,13 +1097,16 @@ java里面的sql注入代审，语句拼接。危险写法和安全写法。原�
 
 1看是不是用$  2看是不是用order by 、like 、in 这些语句
 
-![image-20250313105526019](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250313105526019.png)s
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/e4043209-92b8-4562-80ab-e7502823db3f" />
+
 
 java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后看是$# 这些字符，预编译字符，进行排查有没有一些拼接之类的。
 
-![image-20250316162118831](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316162118831.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/4fbfbaab-ece3-4227-8285-0401142f5d11" />
 
-![image-20250316163730713](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316163730713.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/32bb61db-6ed4-41dd-88ff-577f32c7f7e6" />
+
 
 ----翻车---
 
@@ -1117,35 +1120,41 @@ java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后�
 
 先打开源码发现有引用mybatis，然后猜测有没有引用sql的不安全写法。2、发现存在，这里一般不关注jsp，这类静态文件	3、定位到变量	4、看引用的id为什么，继续向上查找引用id的路由。
 
-![image-20250316171025831](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316171025831.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/8e00164d-3ca6-4f92-b94a-30371b9ed65d" />
+
 
 1、查找引用id的	2、关注一些controller文件	3、定位	4、在delete模块	5、admin路径（路由）下
 
-![image-20250316171604874](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316171604874.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/d05d8dbd-b6cd-40d5-bc93-2d56232af207" />
+
 
 分析发现可能存在sql注入，用sqlmap跑
 
 找到了对应路由，这里不能直接访问，是找出来的，根据上面的delete提醒找到：
 
-![image-20250316172602846](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316172602846.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/a4f31a88-da30-4dcc-acb5-15f84a350b06" />
+
 
 将抓到的数据包测试，在将发送的articelid参数注入点加上，直接就sqlmap跑、：
 
-![image-20250316172713462](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316172713462.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/3747edb6-0b53-4c36-8659-a0d590b0d8e0" />
+
 
 这里注意：复制数据包时候是选原始在复制：
 
-![image-20250316173006826](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316173006826.png) 
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/d030466d-98c7-42b6-9edf-cd3a6d5825d1" />
+
 
 ### xml实体注入：
 
 	
-
-![image-20250313114852083](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250313114852083.png)
-
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/06bacb34-43cf-427e-9478-19ee356a5bec" />
 
 
-![image-20250316175551721](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316175551721.png)
+
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/0982c5b3-04df-4015-acaa-d09a055da7ce" />
+
 
 黑盒就是看数据包是不是xml格式，然后插入dns外带试一下。
 
@@ -1157,46 +1166,36 @@ java里面看sql是否有sql注入，那么就看是mybatis还是jdbc，然后�
 
 SSTI模版         spring boot 框架的。不同框架。	ognl jstl  是一些过时框架的。	ssti的几个可能有漏洞的模板
 
-![image-20250316181357681](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316181357681.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/1fbe3003-6d54-400d-8bcb-20f299d1d21e" />
+
 
 就是模板，将别人的模板中的参数，插入自己的语句，然后实现rce。就比如有的页面，lang=en 然后就是英文页面，lang=cn  就是中文页面，这时候你就尝试改lang后面的参数，看能不能实现rce
 
 参数就是让你渲染别的页面，这页面就是模板，参数可以替换成自己的命令,实现rce。lang参数直接改之类的。
 
-![image-20250316181046474](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316181046474.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/77ac0b7e-a143-424c-ab33-3efa8c5c35c1" />
 
 
 
-![image-20250316181105952](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316181105952.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/79bb7425-cce8-4d55-9f88-4c22a9cb6f9a" />
+
 
 ### SPEL表达式注入
 
 	SPEL表达式	ognl表达式注入(老了)	spel就好比php中的eval	java特有的
 
-![image-20250312223141711](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250312223141711.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/876cb512-cd01-4de5-914f-606555255578" />
 
-![image-20250316181842919](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316181842919.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/4090fc04-1ca3-4a7a-a6b0-5194b5a3bacc" />
+
 
 绕过黑名单：
 
 利用反射机制的方法。--- forname   getclass	这些方法。
 
-![image-20250316182734435](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250316182734435.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/e4340362-6726-4e95-868d-6cf25c39d4c3" />
 
 
 
@@ -1211,28 +1210,32 @@ SSTI模版         spring boot 框架的。不同框架。	ognl jstl  是一些�
 
 测试通过函数或者参数，url中是否存在这些函数类：
 
-![image-20250225154400578](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250225154400578.png)
+<img width="349" alt="image" src="https://github.com/user-attachments/assets/fa5da90d-76ea-4479-853d-79aad418526c" />
+
 
 RuntimeExec
 
-![image-20250227152239421](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227152239421.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/d5288202-2b6f-4d1a-8750-2013f70e70a0" />
+
 
  	ScriptEngineManager  jdk1.8之前的、用处不大，jdk太老了/
 
-![image-20250227152544064](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227152544064.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/85b72a46-720d-43f1-aa6b-4dbccf57a112" />
 
 Groovy
 
 
-													 ProcessBuilder
+							 ProcessBuilder
 
-![image-20250227152903965](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227152903965.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/a7b23936-210f-417b-81f4-64bee7a2bc69" />
+
 
  ProcessImpl
 
 黑盒中就是看参数，url，功能点测试rce。
 
-![image-20250227153311734](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227153311734.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/cd572611-4d8b-4518-9495-5c97fae21169" />
+
 
 ####  jndi
 
@@ -1242,7 +1245,8 @@ java去远程调用rmi和loap协议调用出的rce
 
 主要用jndi的jar包注入工具，利用工具远程生成一个恶意代码的.class文件，然后调用远程地址加载恶意语句注入。
 
-![image-20250225160047242](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250225160047242.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/46495c64-64c8-414f-b704-efd94da7587e" />
+
 
 远程调用方法，远程加载.class文件调用执行
 
@@ -1250,7 +1254,8 @@ jndi是一个内置功能，是java的技术，里面的RMI：远程方法调用
 
 就比如说log4j有漏洞，就用jndi注入测试他的rce。
 
-![image-20250227154024165](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227154024165.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/bb1b397e-7503-44c9-9256-1c94f45a288f" />
+
 
 rmi和ldap的差异：
 
@@ -1266,67 +1271,64 @@ rmi和ldap的差异：
 
 logger.error    logger.info
 
-![image-20250227172202499](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227172202499.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/ecd7bb58-09e1-4c44-b7fa-a153c6f31e6e" />
+
 
 漏洞库	 https://avd.aliyun.com/search?q=Log4j
 
 FastJson	json解析器，它可以解析JSON格式的字符串，支持将JavaBean序列化为JSON字符串，也可以从JSON字符串反序列化到JavaBean。
 
-![image-20250227160345490](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227160345490.png)
-
-
-
-
-													 靶场演示	配合aliyun漏洞库
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/969095d1-865d-4eaa-b5fe-fead5b7872ff" />					 
+							
+靶场演示	配合aliyun漏洞库
 
 shiro 数据包中的cookie中有remerberme   shiro  能够用于身份验证、授权、加密和会话管理。
 
 XStream 反序列化：
 
-![image-20250227161427943](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227161427943.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/9b967119-886a-4543-8baf-74fed9e4f7a5" />
+
 
 Log4j 记录日志的、一般会解析日志：
 
 那黑盒一般测试：一般用dnslog带外测试是否存在可能注入点：
 
-![image-20250227161821491](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227161821491.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/17d318b6-0cfd-4ae4-8648-f7949b14227c" />
 
 #### Tmall_demo:
 
 
 项目：一个仿天猫的平台，进行审计找到fastjson漏洞
 
- ![image-20250227171325686](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227171325686.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/03ff8682-4702-447b-af1e-cc9b9478c2e2" />
+
 
 然后再tmall里面找是否引用过fastjson的库和函数，直接全局搜索
 
-![image-20250227171559745](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227171559745.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/d070da22-e15f-4e0f-af43-88cfd1cd52de" />
+
 
 发现引用了fastjson的包，对应版本也有漏洞，然后还引用了对应的函数，那么就可以确定有洞：
 
-![image-20250227171728213](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227171728213.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/24df5e00-2903-45a5-938f-c469280ad8aa" />
+
 
 然后就找触发点、然后抓包：
 
-![image-20250227172043052](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227172043052.png)
 
 log4j：
 
-![image-20250227172832245](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227172832245.png)
 
 然后就抓到对应路径、触发点的数据包、更改文件名让其触发jndi注入：
 
-![image-20250227172931104](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227172931104.png)
+
 
 ### 不回显
 
 dnslog	dns协议一般是不会被限制的，是域名解析的。
 
-![image-20250227173254287](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250227173254287.png)
 
 # 
-
-
 
 
 
@@ -1338,25 +1340,15 @@ dnslog	dns协议一般是不会被限制的，是域名解析的。
 
 app商家不合规，就是你手机打开会请求权限，什么允许请求你的通讯录，什么请求你的位置。请求你的摄像头、麦克风。正确就是需要请求，如果没有请求那么就不合规。
 
- ![image-20250304210850535](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304210850535.png)
 
 一些测试的工具mobsf(不是专门的测隐私合规的，可以测app)、appshark（静态分析）、appscan（动态分析）------ 所以这个比较好。https://appscan.ly.com/   
 
-![image-20250304211028915](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304211028915.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/9ed1f5d3-2417-4938-adc2-e10571ccf393" />
+
 
 不过用这个工具不能在模拟机中，只能在真机中，而且需要开root。
 
 小程序也可以测，不过大部分都是app。
-
-
-													 这里演示的是mobsf：
-
-
-
-
-
-
-
 
 
 ##### 2:bilibili
@@ -1367,41 +1359,46 @@ app商家不合规，就是你手机打开会请求权限，什么允许请求�
 
 权限弹窗。
 
-
-
-![image-20250304231334253](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304231334253.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/e24b5649-ae1b-49ae-9a33-df570c308a8b" />
 
 2、就是这种app(计算器)是没有必要获取位置
 
-![image-20250304231445413](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304231445413.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/dcb9106b-4e36-41cd-b780-0606de0f5245" />
 
-![image-20250304231720972](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304231720972.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/5f05a334-f607-4091-ab73-f6eeda542ee9" />
+
 
 等这种字眼
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/53d85616-faaa-44a1-9368-459dbb67b35c" />
 
-![image-20250304231838355](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304231838355.png)
 
 例子：
 
-![image-20250304232202822](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304232202822.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/55782ed7-601b-4eed-b49f-8a17355b7fcf" />
 
-![image-20250304232307239](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304232307239.png)
+
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/5a179144-ad20-4630-803d-f832f9210cf4" />
+
 
 hook：就是你动态调试app时候，然后看着其调用的类
 
-![image-20250304233233079](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304233233079.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/6ff1dcc0-976e-443f-b2e5-f47be1edf53a" />
+
 
 或者要你的权限过了、就是此时是你第一次使用它，那么当时的场景你申请查询信用评估是不符合隐私合规：
 
-![image-20250304232456903](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304232456903.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/c42fc705-a979-4a66-ab59-7ab66b7e73a5" />
+
 
 利用用户不看条款：
 
-![image-20250304232605973](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304232605973.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/b063115a-a1dc-4868-99fe-0333170b04a1" />
+
 
 位置权限：
 
-![image-20250304232718548](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304232718548.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/649bc346-82a6-4f50-bac0-acb47a1dec0d" />
 
 
 
@@ -1411,11 +1408,13 @@ hook：就是你动态调试app时候，然后看着其调用的类
 
 比如 https://weixin.qq.com?url=www.xiaodi8.com这种，www.xiaodi8.com的页面和weixin页面一样，实现钓鱼。
 
-![image-20250304222552917](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304222552917.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/d73b6e34-af9f-4a1e-946c-3712e04e0b33" />
+
 
 黑盒思路：
 
-![image-20250304222613534](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304222613534.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/243e4ba2-39fd-4d21-9641-8285a976f565" />
+
 
 制作钓鱼页面。
 
@@ -1425,43 +1424,9 @@ hook：就是你动态调试app时候，然后看着其调用的类
 
  资源拒绝服务
 
-![image-20250304224508558](E:\新建文件夹\新建文件夹\typora学习笔记软件\缓存\image-20250304224508558.png)
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/309555a3-0a47-4621-b050-7f24e0970218" />
+
 
 就是对web资源的调用，占用他的资源。
 
  压缩包炸弹
-
-
-
-
-
-
-
-
-
-
-
-# 78：
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
