@@ -19,7 +19,7 @@
 
 ![image-20250226233606809](https://cdn.jsdelivr.net/gh/maybeyjb/blue-team/img/202506161621130.png)
 
-### ctf
+### ctf利用+绕过
 
 ![image-20250226233743583](https://cdn.jsdelivr.net/gh/maybeyjb/blue-team/img/202506161621131.png)
 
@@ -76,4 +76,15 @@ msyql   这里需要在url编译一次，因为你给过去它会url解码一次
 ![image-20250227134543744](https://cdn.jsdelivr.net/gh/maybeyjb/blue-team/img/202506161621141.png)
 
 ![image-20250227134633669](https://cdn.jsdelivr.net/gh/maybeyjb/blue-team/img/202506161621142.png)
+
+## 总结：
+ssrf攻击的目标是从外网无法访问的内部系统。
+防御：
+禁用不需要的协议，只允许访问HTTP和HTTPS请求； 禁止跳转	
+限制不能访问内网IP，防止对内网进行攻击；设置URL白名单或者限制内网IP
+屏蔽或者过滤返回的详细信息；
+绕过：
+自然就是和防御对立了，127.0.0.1换成16/8进制，短域名等。
+<img width="634" height="390" alt="image" src="https://github.com/user-attachments/assets/5af3343e-42e9-4ba3-b199-b4b4a3d15fd3" />
+
 
